@@ -1,0 +1,13 @@
+services:
+  vector-db:
+    image: valkey/valkey
+    container_name: queue
+    ports:
+      - "6379:6379"
+
+
+
+
+
+
+ # docker compose up -d (in detached mode)     
