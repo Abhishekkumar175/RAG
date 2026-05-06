@@ -5,6 +5,22 @@ services:
     ports:
       - "6379:6379"
 
+  worker:
+    image: python:3.11-slim
+    container_name: rq-worker
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: >
+      sh -c "
+        pip install -r requirements.txt &&
+        RQ_WORKER_FORK_WORK_HORSE=False rq worker
+      "
+    depends_on:
+      - vector-db
+    environment:
+      - RQ_WORKER_FORK_WORK_HORSE=False
+
 
 
 

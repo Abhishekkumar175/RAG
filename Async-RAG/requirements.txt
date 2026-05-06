@@ -74,7 +74,6 @@ pypdf==6.10.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.2
 python-multipart==0.0.27
-pywin32==311
 PyYAML==6.0.3
 qdrant-client==1.17.1
 redis==7.4.0
@@ -115,3 +114,5 @@ websockets==16.0
 xxhash==3.7.0
 yarl==1.23.0
 zstandard==0.25.0
+rq
+redis
