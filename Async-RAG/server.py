@@ -12,7 +12,7 @@ def root():
 
 @app.post("/chat")
 def chat(
-    query: str = Query(..., description="The user query to be answered based on the context retrieved from the vector database")
+    query: str = Query(..., description="The user query to be processed and answered based on the retrieved context.")
 ):
     job = queue.enqueue(process_query, query)
     return {"status": "queued", "job_id": job.id}
